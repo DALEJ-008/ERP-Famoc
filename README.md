@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # ERP Famoc — Comercial e Inventarios
 
 Sistema ERP web para Famoc Depanel. Esta versión cubre los módulos **Comercial**
