@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import json
 
 from django.contrib.auth.models import Group, User
@@ -348,3 +349,8 @@ class InventarioApiTests(_ApiTestCase):
     def test_consulta_no_puede_registrar(self):
         self.entrar_como("Consulta", "consulta")
         self.assertEqual(self._movimiento("entrada", 1).status_code, 403)
+=======
+from django.test import TestCase
+
+# Create your tests here.
+>>>>>>> a36f6c2f35f83d7e04bb0f8a9f5950043995571f

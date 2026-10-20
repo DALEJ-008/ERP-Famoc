@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 """
 API REST del ERP Famoc (módulo Comercial) con autenticación y permisos.
 
@@ -385,3 +386,8 @@ def movimientos(request):
         },
         status=201,
     )
+=======
+from django.shortcuts import render
+
+# Create your views here.
+>>>>>>> a36f6c2f35f83d7e04bb0f8a9f5950043995571f

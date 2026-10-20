@@ -1,5 +1,6 @@
 import { useState } from 'react'
 
+<<<<<<< HEAD
 const SEDES = ['Bogotá', 'Medellín', 'Barranquilla', 'Miami']
 
 // Issue #13: Como empleado comercial quiero registrar y administrar los
@@ -32,12 +33,29 @@ function Clientes({ clientes, puedeCrear, puedeEliminar, onAgregarCliente, onEli
     } catch (err) {
       alert(err.message)
     }
+=======
+// Issue #13: Como empleado comercial quiero registrar y administrar los
+// clientes para gestionar las relaciones comerciales.
+function Clientes({ clientes, onAgregarCliente, onEliminarCliente }) {
+  const [nombre, setNombre] = useState('')
+  const [telefono, setTelefono] = useState('')
+  const [ciudad, setCiudad] = useState('')
+
+  function handleAgregar(e) {
+    e.preventDefault()
+    if (!nombre.trim()) return
+    onAgregarCliente({ id: Date.now(), nombre, telefono, ciudad })
+    setNombre('')
+    setTelefono('')
+    setCiudad('')
+>>>>>>> a36f6c2f35f83d7e04bb0f8a9f5950043995571f
   }
 
   return (
     <div className="panel">
       <h2>Clientes</h2>
 
+<<<<<<< HEAD
       {puedeCrear && (
         <form className="formulario" onSubmit={handleAgregar}>
           <label className="campo">
@@ -62,6 +80,29 @@ function Clientes({ clientes, puedeCrear, puedeEliminar, onAgregarCliente, onEli
           </button>
         </form>
       )}
+=======
+      <form className="formulario" onSubmit={handleAgregar}>
+        <label className="campo">
+          Nombre
+          <input value={nombre} onChange={(e) => setNombre(e.target.value)} placeholder="Nombre del cliente" />
+        </label>
+        <label className="campo">
+          Teléfono
+          <input value={telefono} onChange={(e) => setTelefono(e.target.value)} placeholder="Opcional" />
+        </label>
+        <label className="campo">
+          Ciudad
+          <select value={ciudad} onChange={(e) => setCiudad(e.target.value)}>
+            <option value="">Selecciona sede</option>
+            <option value="Bogotá">Bogotá</option>
+            <option value="Medellín">Medellín</option>
+            <option value="Barranquilla">Barranquilla</option>
+            <option value="Miami">Miami</option>
+          </select>
+        </label>
+        <button className="boton-principal" type="submit">Registrar cliente</button>
+      </form>
+>>>>>>> a36f6c2f35f83d7e04bb0f8a9f5950043995571f
 
       {clientes.length === 0 ? (
         <p className="ayuda">Todavía no hay clientes registrados.</p>
@@ -79,7 +120,11 @@ function Clientes({ clientes, puedeCrear, puedeEliminar, onAgregarCliente, onEli
               <span>{c.telefono || '—'}</span>
               <span>{c.ciudad || '—'}</span>
               <span>
+<<<<<<< HEAD
                 {puedeEliminar && <button onClick={() => handleEliminar(c.id)}>Eliminar</button>}
+=======
+                <button onClick={() => onEliminarCliente(c.id)}>Eliminar</button>
+>>>>>>> a36f6c2f35f83d7e04bb0f8a9f5950043995571f
               </span>
             </div>
           ))}

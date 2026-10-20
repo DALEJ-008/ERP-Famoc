@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from django.conf import settings
 from django.db import models
 
@@ -130,3 +131,8 @@ class MovimientoInventario(models.Model):
 
     def __str__(self):
         return f"{self.get_tipo_display()} de {self.mueble} en {self.sede}"
+=======
+from django.db import models
+
+# Create your models here.
+>>>>>>> a36f6c2f35f83d7e04bb0f8a9f5950043995571f

@@ -1,5 +1,6 @@
 from django.contrib import admin
 
+<<<<<<< HEAD
 from .models import (
     Bitacora,
     Cliente,
@@ -84,3 +85,6 @@ class MovimientoInventarioAdmin(_SoloLectura):
     list_display = ("fecha", "mueble", "sede", "tipo", "delta", "saldo", "usuario")
     list_filter = ("tipo", "sede")
     search_fields = ("mueble__nombre", "motivo")
+=======
+# Register your models here.
+>>>>>>> a36f6c2f35f83d7e04bb0f8a9f5950043995571f

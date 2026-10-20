@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # ERP Famoc — Comercial e Inventarios
 
 Sistema ERP web para Famoc Depanel. Esta versión cubre los módulos **Comercial**
@@ -131,10 +132,32 @@ Las sedes válidas para `ciudad` son: Bogotá, Medellín, Barranquilla, Miami.
 | `DB_ENGINE` | `postgres` | `sqlite` para pruebas locales |
 | `DB_NAME`, `DB_USER`, `DB_HOST`, `DB_PORT` | `ERP_Famoc`, `postgres`, `localhost`, `5432` | Conexión a PostgreSQL |
 | `DB_PASSWORD` | vacío | Contraseña de PostgreSQL |
+=======
+# ERP Famoc — Frontend (Sprint Planning 1)
+
+Versión inicial, **solo frontend**, sin conexión a backend todavía. Todos los datos (clientes, cotizaciones) viven en memoria (`useState`) y se pierden al recargar la página. Esto es intencional: el objetivo de este sprint es tener la interfaz funcionando antes de integrarla con la API de Django.
+
+## Issues cubiertos (Milestone "Sprint Planning 1")
+
+- **#11** — Ver catálogo de muebles disponibles → pestaña **Catálogo**.
+- **#10** — Registrar una cotización sumando varios muebles → pestaña **Cotizaciones** (formulario "Nueva cotización").
+- **#12** — Consultar cotizaciones registradas → pestaña **Cotizaciones** (tabla inferior).
+- **#13** — Registrar y administrar clientes → pestaña **Clientes**.
+
+## Cómo correrlo
+
+```bash
+npm install
+npm run dev
+```
+
+Abre la URL que muestre la terminal (por defecto http://localhost:5173).
+>>>>>>> a36f6c2f35f83d7e04bb0f8a9f5950043995571f
 
 ## Estructura
 
 ```
+<<<<<<< HEAD
 backend/
   erpfamoc/            configuración del proyecto (settings, urls)
   famocapp/
@@ -165,3 +188,22 @@ src/
 Una versión anterior del repositorio tenía la contraseña de PostgreSQL escrita en
 `settings.py`. Esa contraseña debe considerarse expuesta: cámbiala en PostgreSQL.
 Si el repositorio fue compartido, también conviene rotar `DJANGO_SECRET_KEY`.
+=======
+src/
+  App.jsx              # navegación por pestañas + estado compartido
+  App.css              # estilos
+  components/
+    Catalogo.jsx        # issue #11
+    Cotizaciones.jsx     # issues #10 y #12
+    Clientes.jsx          # issue #13
+  data/
+    muebles.js           # catálogo de ejemplo (mock)
+```
+
+## Próximos pasos sugeridos
+
+1. Reemplazar `src/data/muebles.js` por una llamada real a la API de Django (RF-06).
+2. Persistir clientes y cotizaciones en PostgreSQL en lugar de `useState` (RF-02).
+3. Agregar validaciones y manejo de errores más completos.
+4. Sumar autenticación/roles cuando se aborde RF-03.
+>>>>>>> a36f6c2f35f83d7e04bb0f8a9f5950043995571f
